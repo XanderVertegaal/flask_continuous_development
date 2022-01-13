@@ -3,7 +3,7 @@ name: Test Flask app and upload to server
 on: [push, workflow_dispatch]
 jobs:
   test_application:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -18,3 +18,13 @@ jobs:
 
       - name: Run tests
         run: pytest -v
+
+      - name: Access web server
+        env:
+          server_address: ${{ secrets.SERVER_ADDRESS }}
+          server_pw: ${{ secrets.SERVER_pw }}
+        run: ssh root@"$server_address"
+        run: "$server_address"
+
+      - name: Test SSH connection
+        run: ssh -T git@github.com
