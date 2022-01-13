@@ -25,7 +25,7 @@ jobs:
           server_pw: ${{ secrets.SERVER_pw }}
         run: ssh root@"$server_address"
 
-      - run: "$server_address"
+      - run: "$server_pw"
 
       - name: Test SSH connection
         run: ssh -T git@github.com
