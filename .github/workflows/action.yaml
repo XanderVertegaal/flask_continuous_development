@@ -20,12 +20,9 @@ jobs:
         run: pytest -v
 
       - name: Access web server
-        env:
-          server_address: ${{ secrets.SERVER_ADDRESS }}
-          server_pw: ${{ secrets.SERVER_pw }}
-        run: ssh root@"$server_address"
-
-      - run: "$server_pw"
-
-      - name: Test SSH connection
-        run: ssh -T git@github.com
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_ADDRESS }}
+          username: root
+          password: ${{ secrets.SERVER_PW }}
+          script: whoami
