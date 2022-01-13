@@ -1,6 +1,8 @@
 Name: Test Flask app and upload to server
 
-on: push
+on: 
+  push
+  workflow_dispatch
 jobs:
   test_application:
     runs-on: ubuntu-20.04
