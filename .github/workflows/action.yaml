@@ -10,7 +10,8 @@ jobs:
 
       - name: Setup Python
         uses: actions/asetup-python@v2
-        with: python-version: '3.10.0'
+        with: 
+          python-version: '3.10.0'
       
       - name: Install dependencies
         uses: pip install -r requirements.txt
