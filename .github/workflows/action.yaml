@@ -1,4 +1,4 @@
-Name: Test Flask app and upload to server
+name: Test Flask app and upload to server
 
 on: [push, workflow_dispatch]
 jobs:
@@ -15,6 +15,6 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
-        
+
       - name: Run tests
         run: pytest -v
