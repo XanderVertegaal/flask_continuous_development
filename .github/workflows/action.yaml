@@ -33,4 +33,4 @@ jobs:
           host: ${{ secrets.SERVER_ADDRESS }}
           username: root
           password: ${{ secrets.SERVER_PW }}
-          script: run script.sh
+          script: bash script.sh
