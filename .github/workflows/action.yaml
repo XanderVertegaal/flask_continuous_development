@@ -33,6 +33,4 @@ jobs:
           host: ${{ secrets.SERVER_ADDRESS }}
           username: root
           password: ${{ secrets.SERVER_PW }}
-          script: |
-            echo 'Checking server status...'
-            systemctl status foobar
+          script: run script.sh

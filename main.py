@@ -10,4 +10,4 @@ def index():
 
 @app.route('/foo')
 def about():
-    return 'bar'
+    return 'baz'
