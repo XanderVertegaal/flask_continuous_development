@@ -15,4 +15,4 @@ def test_home_returns_200(client):
 
 def test_foo_yields_bar(client):
     response = client.get('/foo')
-    assert response.data == b'bar'
+    assert response.data == b'bap'
