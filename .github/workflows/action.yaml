@@ -19,6 +19,14 @@ jobs:
       - name: Run tests
         run: pytest -v
 
+      - name: Tests have failed
+        if: ${{ failure() }}
+        run: echo 'Failure! :('
+
+      - name: Tests have passed
+        if: ${{ success() }}
+        run: echo 'Success! :)'
+
       - name: Access web server
         uses: appleboy/ssh-action@master
         with:
